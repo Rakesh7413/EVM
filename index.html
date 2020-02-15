@@ -1,0 +1,99 @@
+<html>
+<head>
+    <title>Space Clicker</title>
+</head>
+<style>
+body {
+  background-image: url('blue1.jfif');
+}
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: white;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: white}
+
+.button:active {
+  background-color: grey;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+
+
+<body>
+     <audio id="myAudio">
+       <source src="speech.wav" type="audio/mpeg">
+      </audio>
+	  <audio id="m">
+       <source src="speech.wav" type="audio/mpeg">
+      </audio>
+	  <audio id="my">
+       <source src="speech.wav" type="audio/mpeg">
+      </audio>
+<center><br/><br/><br/>
+<font size="5"><h1>DreamCamp Elections</h1></font>
+    <script type="text/javascript">
+    var clicks = 0;
+	
+    function onClick() {
+	var x = document.getElementById("myAudio");
+	x.play();
+        clicks += 1;
+
+   };
+    </script>
+    <button type="button" class="button" onClick="onClick()"><img src="rblue.jpg" width="200" height="100"></button><br/><br/><br/>
+    
+
+    <script type="text/javascript">
+    var clicks1 = 0;
+	
+    function onClick1() {
+	var y = document.getElementById("m");
+	y.play();
+        clicks1 += 1;
+
+   };
+    </script>
+    <button type="button" onClick="onClick1()" class="button"><img src="green.png" width="200" height="100"></button><br/><br/><br/>
+    
+
+    <script type="text/javascript">
+    var clicks2 = 0;
+    function onClick2() {
+	var z = document.getElementById("my");
+	z.play();
+        clicks2 += 1;
+    
+
+       
+    };
+    </script>
+    <button type="button" onClick="onClick2()" class="button">
+
+   <img src="orange.png" width="200" height="100">
+
+    </button>
+    
+	
+</center>
+  <button type="button" value="send" onClick="submi()" style="font-size:50px;float: right;">Submit</button>
+  <script type="text/javascript">
+    function submi() {
+        
+        var url = "result.html?clicks=" + encodeURIComponent(clicks) + "&clicks1=" + encodeURIComponent(clicks1) + "&clicks2=" + encodeURIComponent(clicks2);
+        window.location.href = url;
+    };
+</script>
+</body></html>

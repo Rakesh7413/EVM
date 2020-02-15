@@ -1,0 +1,69 @@
+<html>
+<head>
+  <title> RESULT </title>
+  <style>
+ 
+  #hi 
+    {
+      max-width: 500px;
+      margin: auto;
+	  border-style: inset;
+	 
+    }
+   
+  </style>
+</head>
+<body >
+     
+  <script type="text/javascript">
+   
+    var queryString = new Array();
+    window.onload = function () {
+        if (queryString.length == 0) {
+            if (window.location.search.split('?').length > 1) {
+                var params = window.location.search.split('?')[1].split('&');
+                for (var i = 0; i < params.length; i++) {
+                    var key = params[i].split('=')[0];
+                    var value = decodeURIComponent(params[i].split('=')[1]);
+                    queryString[key] = value;
+                }
+            }
+        }
+             var clicks=parseInt(queryString["clicks"]);
+			 var clicks1=parseInt(queryString["clicks1"]);
+			 var clicks2=parseInt(queryString["clicks2"]);
+			 var total= clicks+clicks1+clicks2;
+            document.getElementById("clicks").innerHTML = clicks;
+			document.getElementById("clicks1").innerHTML = clicks1;
+			document.getElementById("clicks2").innerHTML = clicks2;
+			document.getElementById("x").innerHTML = total;
+if(clicks>clicks1 && clicks>clicks2)
+{
+   document.getElementById("res").innerHTML = "BLUE wins";
+}
+else if(clicks1>clicks && click1>clicks2)
+{
+    document.getElementById("res").innerHTML = "GREEN wins";
+}
+else if(clicks2>clicks && clicks2>clicks1)
+{
+    document.getElementById("res").innerHTML = "ORANGE wins";
+}
+else
+{document.getElementById("res").innerHTML = "TIED";}
+        
+    };
+  </script>
+<br/><br/><font size="5"><h1 style="margin-right:100px;" align="right">Total Votes:&nbsp;&nbsp<span id="x"></span></h1></font><br/><br/>
+<font size="5"><h1 align="center">Elections Result</h1></font>
+<form id="hi">
+<font size="6">
+ <p><b>BLUE:&nbsp;&nbsp</b><span id="clicks"></span></p>
+ <p><b>GREEN:&nbsp;&nbsp</b><span id="clicks1"></span></p>
+ <p><b>ORANGE:&nbsp;&nbsp</b><span id="clicks2"></span></p>
+ </font>
+</form>
+<font size="6"><p style="margin-left=30px;" id="res"></p></font>
+
+</body>
+</html>
